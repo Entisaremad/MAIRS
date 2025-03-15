@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="./css/task.css">
     <title>M Series Speed Gates | Speed Gates Turnstile | Speed Gates</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
 </head>
 <body>
     <div class="top-header">
@@ -362,6 +363,36 @@
             </div>
         </div>
     </div>
+    <!--3D Object Begin-->
+    <!-- Main 3D Model Viewer -->
+    <div class="viewer-container">
+        <h2>3D Product Viewer</h2>
+        <model-viewer 
+            id="main-viewer"
+            src="3dfile.glb" 
+            alt="3D Product"
+            auto-rotate
+            rotation-per-second="30deg"
+            camera-controls
+            shadow-intensity="1"
+            ar>
+        </model-viewer>
+        <button class="btn" id="openBoxBtn">Open Box</button>
+    </div>
+
+    <!-- Fullscreen 3D Box View -->
+    <div id="boxView" class="box-view">
+        <button class="close-btn" id="closeBoxBtn">✖</button>
+        <model-viewer 
+            id="box-viewer"
+            src="3dfile.glb" 
+            alt="Product Box"
+            auto-rotate
+            camera-controls
+            shadow-intensity="1">
+        </model-viewer>
+    </div>
+     <!--3D Object end-->
     <div class="footer">
         <div class="main-container">
             <div class="social-icons">
@@ -377,5 +408,16 @@
         </div>
     </div>
     <script src="./script.js"></script>
+        <script>
+        // Open the Box View
+        document.getElementById("openBoxBtn").addEventListener("click", function () {
+            document.getElementById("boxView").style.display = "block";
+        });
+
+        // Close the Box View
+        document.getElementById("closeBoxBtn").addEventListener("click", function () {
+            document.getElementById("boxView").style.display = "none";
+        });
+    </script>
 </body>
 </html>
