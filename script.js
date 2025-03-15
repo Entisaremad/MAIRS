@@ -58,3 +58,24 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
+
+//start 3d section script
+
+document.addEventListener("DOMContentLoaded", () => {
+    const enlargeBtn = document.getElementById("enlargeBtn");
+    const closeFullscreen = document.getElementById("closeFullscreen");
+    const fullscreenContainer = document.getElementById("fullscreenContainer");
+
+    // Open fullscreen
+    enlargeBtn.addEventListener("click", () => {
+        fullscreenContainer.style.display = "flex";
+    });
+
+    // Close fullscreen
+    closeFullscreen.addEventListener("click", () => {
+        fullscreenContainer.style.display = "none";
+    });
+});
+
+
+//end 3d section script
